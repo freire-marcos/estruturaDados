@@ -1,5 +1,7 @@
 package com.marcos.estruturaDados.vetor;
 
+import java.util.Arrays;
+
 public class Vetor {
 	
 	private String[] elementos;
@@ -20,17 +22,27 @@ public class Vetor {
 //		}
 //	}
 	
-	public void adiciona(String elemento) throws Exception {
+	public boolean adiciona(String elemento){
 		
 		if(this.tamanho < this.elementos.length) {
 			
 			this.elementos[this.tamanho] = elemento;
 			this.tamanho++;
+			return true;
 		}
-		else {
-			throw new Exception("Tá vendo que essa porra tá cheia não?");
-		}
+		return false;
 		
 	}
+	
+	public int tamanho() {
+		return this.tamanho;
+	}
+
+	@Override
+	public String toString() {
+		return Arrays.toString(elementos);
+	}
+	
+	
 
 }
