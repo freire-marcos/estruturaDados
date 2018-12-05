@@ -6,22 +6,15 @@ public class Vetor {
 
 	private String[] elementos;
 	private int tamanho;
+	
+	
 
 	public Vetor(int capacidade) {
 
 		this.elementos = new String[capacidade];
 	}
 
-	//	public void adiciona(String elemento) {
-	//		
-	//		for(int i = 0; i < this.elementos.length; i++) {
-	//			if(this.elementos[i] == null) {
-	//				this.elementos[i] = elemento;
-	//				break;
-	//			}
-	//		}
-	//	}
-
+	
 	public boolean adiciona(String elemento){
 
 		if(this.tamanho < this.elementos.length) {
@@ -39,17 +32,25 @@ public class Vetor {
 	}
 
 
-	public String busca(int posicao) throws Exception{
-
-		if(!(posicao >= 0 && posicao <= this.tamanho)){
-			
-			throw new Exception("tá maluco, porra?");
-		}
-		return this.elementos[posicao];
+//	public String busca(int posicao) throws Exception{
+//
+//		if(!(posicao >= 0 && posicao <= this.tamanho)){
+//			
+//			throw new Exception("tá maluco, porra?");
+//		}
+//		return this.elementos[posicao];
+//		
+//	}
+	
+	public boolean busca(String elemento){
 		
-
+		for (int i = 0; i < this.tamanho; i++){
+			if(this.elementos[i].equalsIgnoreCase(elemento)){
+				return true;
+			}
+		}
+		return false;
 	}
-
 
 
 	@Override
