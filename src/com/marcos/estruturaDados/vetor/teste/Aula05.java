@@ -11,14 +11,9 @@ public class Aula05 {
 		vetor.adiciona("teste 1");
 		vetor.adiciona("teste 2");
 		vetor.adiciona("teste 3");
-
 		
-		if(vetor.busca("tEstE 1")){
-			System.out.println("blz tá aí");
-		}
-		else{
-			System.out.println("se faz de doido?");
-		}
+		
+		System.out.println("blz, táí o elemento: " + vetor.getElementos(vetor.busca("testE 1")));
 	}
 
 }

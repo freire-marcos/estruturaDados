@@ -8,6 +8,9 @@ public class Vetor {
 	private int tamanho;
 	
 	
+	public String getElementos(int posicao){
+		return this.elementos[posicao];
+	}
 
 	public Vetor(int capacidade) {
 
@@ -32,24 +35,16 @@ public class Vetor {
 	}
 
 
-//	public String busca(int posicao) throws Exception{
-//
-//		if(!(posicao >= 0 && posicao <= this.tamanho)){
-//			
-//			throw new Exception("tá maluco, porra?");
-//		}
-//		return this.elementos[posicao];
-//		
-//	}
+
 	
-	public boolean busca(String elemento){
+	public int busca(String elemento){
 		
 		for (int i = 0; i < this.tamanho; i++){
 			if(this.elementos[i].equalsIgnoreCase(elemento)){
-				return true;
+				return i;
 			}
 		}
-		return false;
+		return -1;
 	}
 
 
